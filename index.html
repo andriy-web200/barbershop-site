@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Gold Barber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>BLACK GOLD BARBER</h1>
+    <p>Premium чоловічі стрижки у твоєму місті</p>
+    <button id="bookBtn">Записатися</button>
+</header>
+
+<section class="hero">
+    <h2>Стрижки для справжніх чоловіків</h2>
+    <p>Стиль. Якість. Атмосфера.</p>
+</section>
+
+<section class="why">
+    <h2>Чому обирають нас</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>✂️ Досвід</h3>
+            <p>Професійні барбери з досвідом роботи</p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Атмосфера</h3>
+            <p>Чоловіча атмосфера та комфорт</p>
+        </div>
+
+        <div class="card">
+            <h3>⭐ Якість</h3>
+            <p>Працюємо тільки з преміум косметикою</p>
+        </div>
+    </div>
+</section>
+
+<section class="pricing">
+    <h2>Наші ціни</h2>
+
+    <div class="cards">
+
+<div class="card">
+    <h3>✂️ Срижка</h3>
+    <p class="price">300 грн</p>
+    <p>Класична або сучасна чоловіча стрижка</p>
+</div>
+
+<div class="card">
+    <h3>🧔 Борода</h3>
+    <p class="price">200 грн</p>
+    <p>Оформлення та догляд за бородою</p>
+</div>
+
+<div class="card">
+    <h3>🔥 Комплекс</h3>
+    <p class="price">450 грн</p>
+    <P>Срижка + борода + укладка</P>
+</div>
+
+</div>
+</section>
+
+
+<section class="contacts">
+    <h2>Контакти</h2>
+    <p>Телефон: +380 00 000 00 00</p>
+</section>
+
+<section class="cta">
+    <h2>Готовий змінити стиль?</h2>
+    <p>Запишись прямо зараз і отримай ідеальну стрижку</p>
+    <button id="bookBtn2">Записатися</button>
+</section>
+
+<script src="script.js"></script>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+
+        <span id="closeBtn" style="cursor:pointer;float:right;font-size:20px;">✖</span>
+        
+        <h2>Запис на стрижку</h2>
+
+        <input type="text" id="name" placeholder="Ваше ім'я">
+        <input type="tel" id="phone" placeholder="Телефон">
+        <button id="sendBtn">Відправити</button>
+
+        <p id="message"></p>
+    </div>
+</div>
+
+</body>
+</html>
