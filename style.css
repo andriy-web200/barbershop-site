@@ -454,3 +454,66 @@ body::after{
 
     filter: brightness(0.4) contrast(1.1);
 }
+
+@media (max-width: 768px) {
+
+    /* 🧠 загальний текст */
+    body{
+        text-align: center;
+    }
+
+    /* 🔥 заговолок */
+    h1{
+        font-size: 32px;
+        padding: 0 10px;
+    }
+
+    /* 📦 блоки з картинками */
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* 📦 самі картинки */
+    .card{
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    /* 🎬 hero секція */
+    .hero{
+        padding: 60px 15px;
+        background-position: center;
+    }
+
+    .hero h2{
+        font-size: 24px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+    /* 💰 СТА секція */
+    .cta h2{
+        font-size: 28px;
+    }
+
+    .cta button{
+        width: 90%;
+        font-size: 18px;
+    }
+
+    /* 🧾 навігація (якщо є) */
+    .nav{
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .menu{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
