@@ -1,9 +1,11 @@
 body{
     margin:0;
     font-family: Arial;
-    background: #111;
     color: white;
     text-align: center;
+
+    background: #0f0f0f;
+    overflow-x: hidden;
 }
 
 header{
@@ -394,4 +396,61 @@ header{
     100% {
         left: 200%;
     }
+}
+
+/* 🔥 ФОН ТОЧКИ */
+body::before{
+    content:"";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+
+    z-index: -2;
+}
+
+/* ✨ М'яке золоте світло */
+body::after{
+    content: "";
+    position: fixed;
+    top: -200px;
+    left: -200px;
+
+    width: 600px;
+    height: 600px;
+
+    background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 60%);
+    filter: blur(80px);
+
+    z-index: -1;
+
+    animation: floatLight 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatLight{
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(200px, 150px);
+    }
+}
+
+#bgVideo{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -3;
+
+    filter: brightness(0.4) contrast(1.1);
 }
