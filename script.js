@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendBtn = document.getElementById("sendBtn");
     const message = document.getElementById("message");
     const closeBtn = document.getElementById("closeBtn");
+    const navBookBtn = document.getElementById("navBookBtn");
 
     // 🔥 ФУНКЦІЯ ЗАКРИТТЯ
     function closeModal(){
@@ -28,8 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     bookBtn2.addEventListener("click", () => {
-        modal.style.display = "flax";
+        modal.style.display = "flex";
 
+        setTimeout(() => {
+            modal.classList.add("active");
+        }, 10);
+    });
+
+    navBookBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
         setTimeout(() => {
             modal.classList.add("active");
         }, 10);
