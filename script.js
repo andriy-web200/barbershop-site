@@ -3,12 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("JS працює");
 
     const bookBtn = document.getElementById("bookBtn");
-    const bookBtn2 =document.getElementById("bookBtn2");
+    const bookBtn2 = document.getElementById("bookBtn2");
+    const floatingBtn = document.getElementById("floatingBtn");
     const modal = document.getElementById("modal");
     const sendBtn = document.getElementById("sendBtn");
     const message = document.getElementById("message");
     const closeBtn = document.getElementById("closeBtn");
     const navBookBtn = document.getElementById("navBookBtn");
+
+    floatingBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+
+        setTimeout(() => {
+            modal.classList.add("active");
+            }, 10);
+        });
 
     // 🔥 ФУНКЦІЯ ЗАКРИТТЯ
     function closeModal(){
@@ -67,5 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         message.textContent = "Заявка відправлена ✔";
     });
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    function checkScroll(){
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+
+            if(elementTop < windowHeight - 100){
+                el.classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
 
 });
