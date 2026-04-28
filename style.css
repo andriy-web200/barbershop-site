@@ -3,16 +3,68 @@ body{
     font-family: Arial;
     color: white;
     text-align: center;
-
     background: #0f0f0f;
     overflow-x: hidden;
 }
 
+/* 🔥 NAVBAR */
+.nav{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:0 40px;
+    z-index:1000;
+}
+
+.logo{
+    color: gold;
+    font-weight:bold;
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+.menu{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: gold;
+}
+
+/* HEADER */
 header{
+    margin-top: 70px;
     padding:100px 20px;
     background: radial-gradient(circle at top, #1a1a1a, #000);
 }
 
+/* HERO */
+.hero{
+    padding: 80px 20px;
+    background: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1") center/cover;
+}
+
+.hero p{
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+/* BUTTON */
 button{
     padding:12px 25px;
     background: linear-gradient(45deg, gold, #ffcc00);
@@ -28,11 +80,7 @@ button:hover{
     box-shadow: 0 10px 25px rgba(255,215,0,0.3);
 }
 
-.hero{
-    padding: 80px 20px;
-    background: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1") center/cover;
-}
-
+/* SERVICES */
 .services{
     padding: 40px;
 }
@@ -60,6 +108,7 @@ button:hover{
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
+/* TEXT */
 h1{
     font-size:48px;
     letter-spacing:2px;
@@ -69,6 +118,7 @@ p{
     opacity:0.8;
 }
 
+/* MODAL */
 .modal{
     position:fixed;
     top: 0;
@@ -115,11 +165,7 @@ input{
     font-size: 16px;
 }
 
-.hero p{
-    opacity: 0.8;
-    font-size: 20px;
-}
-
+/* WHY */
 .why{
     background:#181818;
     padding:60px 20px;
@@ -129,6 +175,7 @@ input{
     margin-bottom:30px;
 }
 
+/* PRICING */
 .pricing{
     padding:60px 20px;
 }
@@ -140,6 +187,7 @@ input{
     margin: 10px 0;
 }
 
+/* CTA */
 .cta{
     background: linear-gradient(45deg, #000, #1a1a1a);
     padding: 80px 20px;
@@ -159,75 +207,7 @@ input{
     padding: 15px 35px;
 }
 
-@media (max-width: 768px){
-    .cards{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card{
-        width: 90%;
-    }
-
-    h1{
-        font-size: 32px;
-    }
-
-    .cta h2{
-        font-size: 32px;
-    }
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-/* 🔥 NAVBAR */
-.nav{
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:70px;
-    background: rgba(0,0,0,0.8);
-    backdrop-filter: blur(10px);
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding:0 40px;
-    z-index:1000;
-}
-
-.logo{
-    color: gold;
-    font-weight:bold;
-    font-size:22px;
-    letter-spacing:2px;
-}
-
-.menu{
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.menu a{
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.menu a:hover{
-    color: gold;
-}
-
-/* щоб header не ховався під меню */
-header{
-    margin-top: 70px;
-}
-
-/* WHY ME */
-
+/* WHY ME GRID */
 .whyMe{
     padding: 100px 20px;
     background: #111;
@@ -235,7 +215,7 @@ header{
 }
 
 .whyMe h2{
-    font-family: 36px;
+    font-size: 36px;
     margin-bottom: 60px;
 }
 
@@ -264,6 +244,7 @@ header{
     margin-bottom: 15px;
 }
 
+/* GALLERY */
 .gallery{
     padding: 80px 20px;
     background: #0d0d0d;
@@ -293,6 +274,7 @@ header{
     transform: scale(1.05);
 }
 
+/* REVIEWS */
 .reviews{
     padding: 80px 20px;
     background: #111;
@@ -306,6 +288,7 @@ header{
     font-style: italic;
 }
 
+/* REVEAL ANIMATION */
 .reveal{
     opacity: 0;
     transform: translateY(40px);
@@ -317,7 +300,7 @@ header{
     transform: translateY(0);
 }
 
-/* 🔥 ЛИПКА КНОПКА */
+/* FLOATING BUTTON */
 .floating-btn{
     position: fixed;
     bottom: 25px;
@@ -333,72 +316,44 @@ header{
     cursor: pointer;
 
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-
     transition: 0.3s ease;
     z-index: 9999;
 
     animation: pulse 2s infinite;
-
-    overflow: hidden; /* важливо для shine */
-}
-
-/* 🔥 Анімація пульсу кнопки */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-
-    50% {
-        transform: scale(1.08);
-        box-shadow: 0 15px 40px rgba(255,255,0,0.4);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
+    overflow: hidden;
 }
 
 .floating-btn:hover{
     transform: scale(1.1);
-    box-shadow: 0 15px 35px rgba(215,215,0,0.3);
 }
 
-/* ✨ світлова анімація */
+/* PULSE */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* SHINE */
 .floating-btn::before{
     content: "";
     position: absolute;
     top: 0;
     left: -100%;
-
     width: 50%;
     height: 100%;
-
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.6),
-        transparent
-    );
-
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
     transform: skewX(-20deg);
     animation: shine 3s infinite;
 }
 
 @keyframes shine {
-    0% {
-        left: -100%;
-    }
-    50% {
-        left: 200%;
-    }
-    100% {
-        left: 200%;
-    }
+    0% { left: -100%; }
+    50% { left: 200%; }
+    100% { left: 200%; }
 }
 
-/* 🔥 ФОН ТОЧКИ */
+/* BACKGROUND DOTS */
 body::before{
     content:"";
     position: fixed;
@@ -406,86 +361,67 @@ body::before{
     left: 0;
     width: 100%;
     height: 100%;
-
     background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 30px 30px;
-
     z-index: -2;
 }
 
-/* ✨ М'яке золоте світло */
+/* GOLD LIGHT */
 body::after{
     content: "";
     position: fixed;
     top: -200px;
     left: -200px;
-
     width: 600px;
     height: 600px;
-
     background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 60%);
     filter: blur(80px);
-
     z-index: -1;
-
     animation: floatLight 10s infinite alternate ease-in-out;
 }
 
 @keyframes floatLight{
-    from {
-        transform: translate(0,0);
-    }
-    to {
-        transform: translate(200px, 150px);
-    }
+    from { transform: translate(0,0); }
+    to { transform: translate(200px, 150px); }
 }
 
+/* VIDEO BG */
 #bgVideo{
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     z-index: -3;
-
     filter: brightness(0.4) contrast(1.1);
 }
 
-@media (max-width: 768px) {
+/* BURGER */
+.burger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
 
-    /* 🧠 загальний текст */
-    body{
-        text-align: center;
-    }
+/* MOBILE */
+@media (max-width: 768px){
 
-    /* 🔥 заговолок */
     h1{
         font-size: 32px;
-        padding: 0 10px;
     }
 
-    /* 📦 блоки з картинками */
     .cards{
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
     }
 
-    /* 📦 самі картинки */
     .card{
         width: 90%;
-        margin: 10px 0;
     }
 
-    /* 🎬 hero секція */
     .hero{
         padding: 60px 15px;
-        background-position: center;
     }
 
     .hero h2{
@@ -496,7 +432,6 @@ body::after{
         font-size: 16px;
     }
 
-    /* 💰 СТА секція */
     .cta h2{
         font-size: 28px;
     }
@@ -506,21 +441,12 @@ body::after{
         max-width: 300px;
     }
 
-    /* 🧾 навігація (якщо є) */
     .nav{
         flex-direction: column;
         height: auto;
         padding: 10px;
         gap: 10px;
-        align-items: center;
     }
-
-    .menu{
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* 🔥 МОБІЛЬНЕ ВИЇЗДЖАЮЧЕ МЕНЮ */
 
     .menu{
         position: fixed;
@@ -529,7 +455,6 @@ body::after{
         width:70%;
         height:100vh;
         background:#000;
-        display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
@@ -538,26 +463,12 @@ body::after{
         z-index:999;
     }
 
-    /* коли меню відкрите */
     .menu.active{
         right:0;
     }
 
-    /* бургер показуємо тільки на мобілці */
     .burger{
         display:block;
         color:gold;
     }
-
-    /* кнопку запису в меню ховаємо */
-    .nav button{
-        display:none;
-    }
-
-}
-
-.burger{
-    display:none;
-    font-size:28px;
-    cursor:pointer; 
 }
