@@ -11,83 +11,60 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeBtn");
     const navBookBtn = document.getElementById("navBookBtn");
 
-    // 🟡 важлива перевірка
-    if(!floatingBtn || !modal) return;
-
-    floatingBtn.addEventListener("click", () => {
+    // ⭐ ФУНКЦІЇ МОДАЛКИ
+    function openModal(){
+        if (!modal) return;
         modal.style.display = "flex";
-
         setTimeout(() => {
             modal.classList.add("active");
-            }, 10);
-        });
+        }, 10);
+    }
 
-    // 🔥 ФУНКЦІЯ ЗАКРИТТЯ
     function closeModal(){
+        if (!modal) return;
         modal.classList.remove("active");
-
         setTimeout(() => {
             modal.style.display = "none";
         }, 300);
     }
 
-    // 🔥 ВІДКРИТТЯ
-    bookBtn.addEventListener("click", () => {
-        modal.style.display = "flex";
+    // ⭐ ВІДКРИТТЯ МОДАЛКИ (всі кнопки)
+    if (bookBtn) bookBtn.addEventListener("click", openModal);
+    if (bookBtn2) bookBtn2.addEventListener("click", openModal);
+    if (floatingBtn) floatingBtn.addEventListener("click", openModal);
+    if (navBookBtn) navBookBtn.addEventListener("click", openModal);
 
-        setTimeout(() => {
-            modal.classList.add("active");
-        }, 10);
-    });
+    // ⭐ ЗАКРИТТЯ
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
-    bookBtn2.addEventListener("click", () => {
-        modal.style.display = "flex";
+    if (modal) {
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) closeModal();
+        });
+    }
 
-        setTimeout(() => {
-            modal.classList.add("active");
-        }, 10);
-    });
+    // ⭐ ВІДПРАВКА ФОРМИ
+    if (sendBtn) {
+        sendBtn.addEventListener("click", () => {
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
 
-    navBookBtn.addEventListener("click", () => {
-        modal.style.display = "flex";
-        setTimeout(() => {
-            modal.classList.add("active");
-        }, 10);
-    });
+            if(name === "" || phone === ""){
+                message.textContent = "Заповніть всі поля!";
+                return;
+            }
 
-    // 🔥 КНОПКА ✖
-    closeBtn.addEventListener("click", () => {
-        closeModal();
-    });
+            message.textContent = "Заявка відправлена ✔";
+        });
+    }
 
-    // 🔥 КЛІК ПО ФОНУ
-    modal.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-
-    // 🔥 ВІДПРАВКА ФОРМИ
-    sendBtn.addEventListener("click", () => {
-        const name = document.getElementById("name").value;
-        const phone = document.getElementById("phone").value;
-
-        if(name === "" || phone === ""){
-            message.textContent = "Заповніть всі поля!";
-            return;
-        }
-
-        message.textContent = "Заявка відправлена ✔";
-    });
-
+    // ⭐ АНІМАЦІЯ СКРОЛУ
     const reveals = document.querySelectorAll(".reveal");
 
     function checkScroll(){
         const windowHeight = window.innerHeight;
-
         reveals.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
-
             if(elementTop < windowHeight - 100){
                 el.classList.add("active");
             }
@@ -97,21 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", checkScroll);
     checkScroll();
 
+    // ⭐ BURGER MENU
+    const burger = document.querySelector(".burger");
+    const menu = document.querySelector(".menu");
 
-// 🍔 BURGER MENU SAFE VERSION
-const burger = document.querySelector(".burger");
-const menu = document.querySelector(".menu");
+    if (burger && menu) {
+        burger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
 
-if (burger && menu) {
-burger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-
-document.querySelectorAll(".menu a").forEach(link => {
-    link.addEventListener("click", () => {
-        menu.classList.remove("active");
-    });
-});
-}
+        document.querySelectorAll(".menu a").forEach(link => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("active");
+            });
+        });
+    }
 
 });
