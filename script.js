@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closeBtn");
     const navBookBtn = document.getElementById("navBookBtn");
 
+    // 🟡 важлива перевірка
+    if(!floatingBtn || !modal) return;
+
     floatingBtn.addEventListener("click", () => {
         modal.style.display = "flex";
 
@@ -95,10 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
     checkScroll();
 
 
-// 🍔 БУРГЕР МЕНЮ ПРАВИЛЬНО
+// 🍔 BURGER MENU SAFE VERSION
 const burger = document.querySelector(".burger");
 const menu = document.querySelector(".menu");
 
+if (burger && menu) {
 burger.addEventListener("click", () => {
     menu.classList.toggle("active");
 });
@@ -108,5 +112,6 @@ document.querySelectorAll(".menu a").forEach(link => {
         menu.classList.remove("active");
     });
 });
+}
 
 });
