@@ -95,3 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
     checkScroll();
 
 });
+
+// 🍔 BURGER MENU
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    
+});

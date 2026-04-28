@@ -519,4 +519,45 @@ body::after{
         flex-direction: column;
         gap: 10px;
     }
+
+    /* 🔥 МОБІЛЬНЕ ВИЇЗДЖАЮЧЕ МЕНЮ */
+
+    .menu{
+        position: fixed;
+        top:0;
+        right:-100%;
+        width:70%;
+        height:100vh;
+        background:#000;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:30px;
+        transition:0.4s;
+        z-index:999;
+    }
+
+    /* коли меню відкрите */
+    .menu.active{
+        right:0;
+    }
+
+    /* бургер показуємо тільки на мобілці */
+    .burger{
+        display:block;
+        color:gold;
+    }
+
+    /* кнопку запису в меню ховаємо */
+    .nav button{
+        display:none;
+    }
+
+}
+
+.burger{
+    display:none;
+    font-size:28px;
+    cursor:pointer; 
 }
